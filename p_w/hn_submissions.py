@@ -18,6 +18,7 @@ async def dump_load_url():
             url = 'https://hacker-news.firebaseio.com/v0/item/' + str(i) + '.json'
             resp_in = await client.get(url)
             resp_dict = resp_in.json()
+            # Если вы не уверены, существует ли ключ в словаре, используйте метод dict.get()
             submission_dict = {
                 "title": resp_dict['title'],
                 'link': 'https://news.ycombinator.com/' + str(i),
